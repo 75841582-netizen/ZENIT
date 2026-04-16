@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="estiloRegister.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Sign Up</h1>
+
+    <form id="formulario">
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Your email address" required>
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Your password" required>
+
+        <div class="terms">
+            <input type="checkbox" checked>
+            <p>
+                Acepto los <span>Términos de Servicio</span> y 
+                <span>Política de privacidad</span>.
+            </p>
+        </div>
+
+        <button type="submit">Continue</button>
+
+        <p class="login">
+            ¿Tienes una cuenta? <a href="login.html">Iniciar sesión</a>
+        </p>
+    </form>
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>

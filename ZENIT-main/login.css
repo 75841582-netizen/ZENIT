@@ -1,0 +1,133 @@
+
+  body {
+  margin: 0;
+  font-family: Arial;
+  background: #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 350px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.logo {
+  width: 70px;
+}
+
+.title {
+  color: #1d4ed8;
+  letter-spacing: 5px;
+  margin: 10px 0;
+}
+
+h2 {
+  margin: 10px 0 5px;
+}
+
+.subtitle {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+.password-box {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.password-box input {
+  border: none;
+  flex: 1;
+}
+
+.password-box span {
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #5b2bc0;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #4a22a3;
+}
+
+.or {
+  margin: 20px 0;
+  font-size: 12px;
+  color: gray;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social button {
+  width: 48%;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.insta {
+  background: #0ea5e9;
+}
+
+.fb {
+  background: #3b5998;
+}
+
+.bottom {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.bottom a {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#message {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px;
+}
