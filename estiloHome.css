@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #e6e6e6;
+  min-height: 100vh;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.side-menu {
+  width: 260px;
+  background: #ffffff;
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.side-menu.collapsed {
+  width: 80px;
+}
+
+.side-menu.collapsed .profile p,
+.side-menu.collapsed .menu-left span:not(.icon),
+.side-menu.collapsed .menu-arrow,
+.side-menu.collapsed .logout-btn,
+.side-menu.collapsed .menu-logo img {
+  display: none;
+}
+
+.side-menu.collapsed .menu-list li {
+  justify-content: center;
+}
+
+.side-menu.collapsed .menu-left {
+  justify-content: center;
+}
+
+.menu-top {
+  padding: 20px 16px;
+}
+
+.close-btn,
+.menu-btn {
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  color: #5d37bf;
+}
+
+.menu-logo {
+  text-align: center;
+  margin: 16px 0 18px;
+}
+
+.menu-logo img {
+  width: 130px;
+  display: block;
+  margin: 0 auto;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.profile img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.profile p {
+  font-size: 14px;
+  color: #a1acc8;
+  word-break: break-word;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0 12px;
+}
+
+.menu-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 12px;
+  color: #4b587c;
+  font-size: 15px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.menu-list li:hover {
+  background: #eef2ff;
+}
+
+.menu-list li.active {
+  background: #d9deef;
+  color: #21386d;
+  font-weight: bold;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-list .icon {
+  width: 20px;
+  text-align: center;
+}
+
+.menu-arrow {
+  opacity: 0.55;
+}
+
+.menu-bottom {
+  padding: 20px 16px;
+}
+
+.logout-btn {
+  width: 100%;
+  border: none;
+  background: #5c28b5;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.main-content {
+  flex: 1;
+  padding: 28px;
+  background: linear-gradient(to bottom, #dfe8ff, #eef2ff);
+}
+
+.top-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.top-header h1 {
+  color: #263d73;
+  font-size: 28px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+}
+
+.section-title,
+.stats-title,
+.tasks-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #263d73;
+  margin-bottom: 10px;
+}
+
+.underline {
+  width: 120px;
+  height: 4px;
+  background: #324c88;
+  border-radius: 4px;
+  margin-bottom: 22px;
+}
+
+.progress-row {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.mini-progress {
+  text-align: center;
+}
+
+.mini-progress p {
+  font-size: 15px;
+  color: #7f8fb3;
+  margin-bottom: 10px;
+}
+
+.circle-small,
+.circle-big {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background: white;
+}
+
+.circle-small {
+  width: 100px;
+  height: 100px;
+  border: 8px solid #e36f9d;
+  color: #e36f9d;
+  font-size: 20px;
+}
+
+.circle-big {
+  width: 140px;
+  height: 140px;
+  border: 10px solid #5867f2;
+  color: #5867f2;
+  font-size: 32px;
+}
+
+.chart-box {
+  margin-top: 10px;
+}
+
+.chart {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: end;
+  gap: 14px;
+}
+
+.bar {
+  width: 28px;
+  background: #d8658f;
+  border-radius: 6px 6px 0 0;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid #cfd7ee;
+  color: #67789f;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+
+  .side-menu.collapsed {
+    transform: translateX(-100%);
+    width: 260px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .top-header h1 {
+    font-size: 22px;
+  }
+}

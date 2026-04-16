@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fitness Pro</title>
+  <link rel="stylesheet" href="estilosRetos.css">
+</head>
+<body>
+
+  <h1>Fitness Pro</h1>
+
+  <button onclick="iniciarRutina()">Iniciar Rutina</button>
+  <button onclick="comprarRutina()">Comprar Rutina</button>
+
+  <div id="output"></div>
+
+  <!-- FORM DIRECCIÓN -->
+  <div id="formDireccion" style="display:none;">
+    <h2>📍 Dirección de Envío</h2>
+    <input type="text" id="direccion" placeholder="Ingresa tu dirección">
+    <button onclick="confirmarCompra()">Confirmar Compra</button>
+  </div>
+
+  <script src="scriptRetos.js"></script>
+</body>
+</html>
