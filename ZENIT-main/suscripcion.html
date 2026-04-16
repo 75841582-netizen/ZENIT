@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZENIT - Subscription</title>
+  <link rel="stylesheet" href="suscripcion.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Subscription Plan</h1>
+    <p class="subtitle">Get access to premium routines and exclusive benefits.</p>
+
+    <div class="plan-card">
+      <h2>PRO Plan</h2>
+      <p class="price">S/ 25.00 / month</p>
+      <ul>
+        <li>Premium routines</li>
+        <li>Progress tracking</li>
+        <li>Exclusive recommendations</li>
+        <li>Priority access</li>
+      </ul>
+      <button onclick="mostrarSuscripcion()">Subscribe Now</button>
+    </div>
+
+    <div id="subscriptionSection" class="hidden">
+      <h2>Complete your subscription</h2>
+
+      <label for="fullName">Full name</label>
+      <input type="text" id="fullName" placeholder="Your full name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your email">
+
+      <label for="address">Address</label>
+      <input type="text" id="address" placeholder="Your address">
+
+      <div class="payment-box">
+        <h3>Payment Method</h3>
+        <p><strong>Yape</strong></p>
+        <img src="miQR.png" alt="QR Yape" class="qr">
+        <p>Scan the QR and make the payment.</p>
+      </div>
+
+      <div class="buttons">
+        <button onclick="confirmarSuscripcion()">Confirm Subscription</button>
+        <button onclick="confirmarPago()">I already paid</button>
+      </div>
+
+      <p id="message"></p>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="suscripcion.js"></script>
+</body>
+</html>
