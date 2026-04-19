@@ -1,54 +1,43 @@
-function mostrarSuscripcion() {
-  document.getElementById("subscriptionSection").style.display = "block";
-  document.getElementById("message").innerText = "";
-  document.getElementById("result").innerHTML = "";
+function mostrarFormulario() {
+  document.getElementById("formSection").style.display = "block";
+  document.getElementById("mensaje").innerText = "";
 }
 
-function confirmarSuscripcion() {
-  const fullName = document.getElementById("fullName").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const address = document.getElementById("address").value.trim();
-  const message = document.getElementById("message");
+function procesarSuscripcion() {
+  const mensaje = document.getElementById("mensaje");
 
-  if (fullName === "" || email === "" || address === "") {
-    message.innerText = "Please complete all fields.";
-    return;
+  // Datos del formulario
+  let datos = [
+    document.getElementById("name").value.trim(),
+    document.getElementById("email").value.trim()
+  ];
+
+  let nombres = ["Name", "Email"];
+
+  // 🔁 1. FOR → validar campos
+  for (let i = 0; i < datos.length; i++) {
+    if (datos[i] === "") {
+      mensaje.innerText = nombres[i] + " is required ❌";
+      return;
+    }
   }
 
-  let confirmacion;
+  // 🔁 2. WHILE → confirmación
+  let confirmacion = prompt("Confirm subscription? (yes/no)");
+
+  while (confirmacion !== "yes") {
+    confirmacion = prompt("Please type 'yes' to confirm");
+  }
+
+  mensaje.innerText = "Subscription confirmed ✔";
+
+  // 🔁 3. DO WHILE → pago
+  let pago;
+
   do {
-    confirmacion = prompt("Do you confirm the subscription? (yes/no)");
-  } while (confirmacion !== "yes");
+    pago = prompt("Did you complete the payment? (yes/no)");
+  } while (pago !== "yes");
 
-  message.innerText = "Subscription data confirmed. Now complete the payment with Yape.";
-}
-
-function confirmarPago() {
-  const fullName = document.getElementById("fullName").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const address = document.getElementById("address").value.trim();
-  const result = document.getElementById("result");
-  const message = document.getElementById("message");
-
-  if (fullName === "" || email === "" || address === "") {
-    message.innerText = "Please complete the form first.";
-    return;
-  }
-
-  message.innerText = "Verifying payment...";
-
-  setTimeout(() => {
-    result.innerHTML = `
-      <h2>✅ Active Subscription</h2>
-      <p><strong>Name:</strong> ${fullName}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Address:</strong> ${address}</p>
-      <p><strong>Plan:</strong> PRO Plan</p>
-      <p><strong>Payment method:</strong> Yape</p>
-      <p>Your subscription is now active.</p>
-    `;
-
-    message.innerText = "";
-    document.getElementById("subscriptionSection").style.display = "none";
-  }, 3000);
+  // Resultado final
+  mensaje.innerText = "Payment successful 💜 Subscription active ✅";
 }

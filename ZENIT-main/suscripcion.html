@@ -2,58 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZENIT - Subscription</title>
-  <link rel="stylesheet" href="suscripcion.css">
+  <link rel="stylesheet" href="estiloHome.css">
+  <link rel="stylesheet" href="subscription.css">
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>Subscription Plan</h1>
-    <p class="subtitle">Get access to premium routines and exclusive benefits.</p>
+<div class="dashboard">
 
-    <div class="plan-card">
+  <!-- MENÚ LATERAL (igual al home) -->
+  <aside class="side-menu">
+    <div class="menu-logo">
+      <img src="img/logo_zenit.png">
+    </div>    
+
+    <ul class="menu-list">
+      <li onclick="window.location.href='home.html'">Home</li>
+      <li onclick="window.location.href='retos.html'">Challenges</li>
+      <li onclick="window.location.href='subscription.html'" class="active">Subscription</li>
+    </ul>
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main class="main-content">
+
+    <div class="top-header">
+      <h1>Subscription</h1>
+    </div>
+
+    <!-- PLAN -->
+    <section class="card">
       <h2>PRO Plan</h2>
       <p class="price">S/ 25.00 / month</p>
-      <ul>
-        <li>Premium routines</li>
-        <li>Progress tracking</li>
-        <li>Exclusive recommendations</li>
-        <li>Priority access</li>
-      </ul>
-      <button onclick="mostrarSuscripcion()">Subscribe Now</button>
-    </div>
 
-    <div id="subscriptionSection" class="hidden">
+      <ul>
+        <li>✔ Premium routines</li>
+        <li>✔ Progress tracking</li>
+        <li>✔ Exclusive recommendations</li>
+      </ul>
+
+      <button onclick="mostrarFormulario()">Subscribe Now</button>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="card hidden" id="formSection">
+
       <h2>Complete your subscription</h2>
 
-      <label for="fullName">Full name</label>
-      <input type="text" id="fullName" placeholder="Your full name">
+      <label>Name</label>
+      <input type="text" id="name">
 
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Your email">
+      <label>Email</label>
+      <input type="email" id="email">
 
-      <label for="address">Address</label>
-      <input type="text" id="address" placeholder="Your address">
+      <label>Plan</label>
+      <input type="text" value="PRO Plan" disabled>
 
-      <div class="payment-box">
-        <h3>Payment Method</h3>
-        <p><strong>Yape</strong></p>
-        <img src="miQR.png" alt="QR Yape" class="qr">
-        <p>Scan the QR and make the payment.</p>
-      </div>
+      <button onclick="procesarSuscripcion()">Confirm</button>
 
-      <div class="buttons">
-        <button onclick="confirmarSuscripcion()">Confirm Subscription</button>
-        <button onclick="confirmarPago()">I already paid</button>
-      </div>
+      <p id="mensaje"></p>
 
-      <p id="message"></p>
-    </div>
+    </section>
 
-    <div id="result"></div>
-  </div>
+  </main>
 
-  <script src="suscripcion.js"></script>
+</div>
+
+<script src="suscripcion.js"></script>
 </body>
 </html>
