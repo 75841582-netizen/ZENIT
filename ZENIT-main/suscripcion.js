@@ -6,38 +6,47 @@ function mostrarFormulario() {
 function procesarSuscripcion() {
   const mensaje = document.getElementById("mensaje");
 
-  // Datos del formulario
   let datos = [
-    document.getElementById("name").value.trim(),
+    document.getElementById("nombre").value.trim(),
     document.getElementById("email").value.trim()
   ];
 
-  let nombres = ["Name", "Email"];
+  let nombres = ["Nombre", "Correo"];
 
-  // 🔁 1. FOR → validar campos
+  // 🔁 FOR → validar
   for (let i = 0; i < datos.length; i++) {
     if (datos[i] === "") {
-      mensaje.innerText = nombres[i] + " is required ❌";
+      mensaje.innerText = nombres[i] + " es obligatorio ❌";
       return;
     }
   }
 
-  // 🔁 2. WHILE → confirmación
-  let confirmacion = prompt("Confirm subscription? (yes/no)");
+  // 🔁 WHILE → confirmar suscripción
+  let confirmacion = prompt("¿Confirmas la suscripción? (si/no)");
 
-  while (confirmacion !== "yes") {
-    confirmacion = prompt("Please type 'yes' to confirm");
+  while (confirmacion !== "si") {
+    confirmacion = prompt("Escribe 'si' para confirmar");
   }
 
-  mensaje.innerText = "Subscription confirmed ✔";
+  mensaje.innerText = "Escanea el QR y realiza el pago 💸";
 
-  // 🔁 3. DO WHILE → pago
+  // 🔁 DO WHILE → pago con QR
   let pago;
 
   do {
-    pago = prompt("Did you complete the payment? (yes/no)");
-  } while (pago !== "yes");
+    pago = prompt("¿Ya realizaste el pago por Yape? (si/no)");
+  } while (pago !== "si");
 
-  // Resultado final
-  mensaje.innerText = "Payment successful 💜 Subscription active ✅";
+  // 💾 guardar suscripción
+  let suscripcion = {
+    nombre: datos[0],
+    email: datos[1],
+    plan: "PRO",
+    metodo: "Yape",
+    activo: true
+  };
+
+  localStorage.setItem("suscripcion", JSON.stringify(suscripcion));
+
+  mensaje.innerText = "Pago confirmado 💜 Suscripción activa ✅";
 }

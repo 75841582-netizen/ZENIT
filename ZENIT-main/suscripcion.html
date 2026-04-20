@@ -32,39 +32,46 @@
     </div>
 
     <!-- PLAN -->
-    <section class="card">
-      <h2>PRO Plan</h2>
-      <p class="price">S/ 25.00 / mes</p>
+<div class="card">
+  <h2>Plan PRO</h2>
+  <p class="price">S/ 25.00 / mes</p>
 
-      <ul>
-        <li>✔ Premium routines</li>
-        <li>✔ Progress tracking</li>
-        <li>✔ Recomendaciones exclusivas</li>
-      </ul>
+  <ul>
+    <li>✔ Rutinas premium</li>
+    <li>✔ Seguimiento de progreso</li>
+    <li>✔ Recomendaciones exclusivas</li>
+  </ul>
 
-      <button onclick="mostrarFormulario()">Suscribirse ahora</button>
-    </section>
+  <button onclick="mostrarFormulario()">Suscribirme</button>
+</div>
 
-    <!-- FORMULARIO -->
-    <section class="card hidden" id="formSection">
+<section class="card hidden" id="formSection">
 
-      <h2>Completa tu suscripción</h2>
+  <h2>Completa tu suscripción</h2>
 
-      <label>Nombre</label>
-      <input type="text" id="name">
+  <label>Nombre</label>
+  <input type="text" id="nombre">
 
-      <label>Correo electrónico</label>
-      <input type="email" id="email">
+  <label>Correo</label>
+  <input type="email" id="email">
 
-      <label>Plan</label>
-      <input type="text" value="PRO Plan" disabled>
+  <label>Plan</label>
+  <input type="text" value="PRO" disabled>
 
-      <button onclick="procesarSuscripcion()">Confirmar</button>
+  <button onclick="procesarSuscripcion()">Confirmar</button>
 
-      <p id="mensaje"></p>
+  <p id="mensaje"></p>
 
-    </section>
+<div style="text-align:center; margin-top:20px;">
+  <h3>Método de pago</h3>
+  <p><strong>Yape</strong></p>
 
+  <img src="img/miQR.png" alt="QR Yape" style="width:200px; border-radius:10px;">
+
+  <p>Escanea el QR y realiza el pago</p>
+</div>
+
+</section>
   </main>
 
 </div>
